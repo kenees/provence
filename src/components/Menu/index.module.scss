@@ -1,0 +1,12 @@
+.menu {
+  width: 100%;
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    margin: 0 20px;
+  }
+}

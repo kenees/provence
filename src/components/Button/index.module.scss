@@ -1,0 +1,89 @@
+.button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
+  margin: 0 10px;
+  position: relative;
+  border-radius: 50%;
+  background: rgba(224, 0, 230, 0.7);
+  overflow: hidden;
+  box-shadow: 0px 0px 80px #000 inset;
+
+  ul {
+    width: 200%;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-50%);
+    transition: all .6s;
+    font-weight: normal;
+    color: #ff00de;
+  }
+  li {
+    flex: 1;
+    font-size: 12px;
+  }
+}
+
+.animation1 {
+  animation: MouseEnter .6s forwards;
+}
+
+.animation2 {
+  animation: MouseLeave .6s forwards;
+}
+
+@keyframes MouseLeave {
+  0% {
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  20% {
+    color: rgb(255, 255, 255);
+    transform: translateX(-60%);
+  }
+  65% {
+    color: rgb(255, 255, 255);
+    transform: translateX(0%);
+  }
+  90% {
+    color: #ff00de;
+    transform: translateX(-6%);
+  }
+  100% {
+    color:#ff00de;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes MouseEnter {
+  0% {
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+  20% {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transform: translateX(-60%);
+  }
+  65% {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transform: translateX(0%);
+  }
+  90% {
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    transform: translateX(-6%);
+  }
+  100% {
+    color: rgb(255, 255, 255);
+    font-weight: normal;
+    transform: translateX(0%);
+  }
+}
