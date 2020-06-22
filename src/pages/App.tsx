@@ -1,8 +1,9 @@
 import React from 'react';
 import {renderRoutes} from 'react-router-config';
-import {BrowserRouter, Switch} from 'react-router-dom';
+import {Router, Switch} from 'react-router-dom';
 import {Provider} from 'mobx-react';
 import Authority from '@/pages/authority';
+import history from '@/router/history';
 import stores from '../store';
 import routes from '../router';
 
@@ -61,20 +62,16 @@ import routes from '../router';
 // the third method
 
 function App(props: any): JSX.Element {
-    console.log('props', props)
     return (
         <Provider store={stores}>
             <Authority routes={routes}>
-                {
-                    console.log(window.location)
-                }
-                <BrowserRouter>
+                <Router history={history} >
                     <Switch>
                         {
                             renderRoutes(routes)
                         }
                     </Switch>
-                </BrowserRouter>
+                </Router>
             </Authority>
         </Provider>
     )

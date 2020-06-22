@@ -10,19 +10,6 @@ class Storage {
 let storage = new Storage();
 
 
-class History {
-    // _history: any
-    // _history = window.location.history
-
-    push (url: string) {
-        console.log('push', url)
-        console.log(window.location.history)
-    }
-}
-
-let history = new History()
-
 export {
     storage,
-    history,
 }

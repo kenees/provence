@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import {observer} from 'mobx-react';
+import history from '@/router/history';
 import {Menu} from "@/const";
 import {IProps, IState} from './interface';
 import logo from '@/assets/images/logo.png';
@@ -19,9 +20,6 @@ class Home extends React.Component<IProps, IState> {
     };
 
     componentDidMount(): void {
-        console.log('page, home')
-        console.log(this.props)
-
         const that = this;
         that.timer = setTimeout(() => {
             that.onMouseEnter(0);
@@ -53,10 +51,17 @@ class Home extends React.Component<IProps, IState> {
     };
 
     navigation = (url: string) => {
-        // window.location.href=url
-        // this.props.router.push({'/blog'})
-        this.props.history.push('/blog')
+        history.push(url)
     };
+
+    onTabClick = (e: number) => {
+        const { index } = this.state;
+        if (e === index) {
+            this.navigation(Menu[e].navigate);
+        } else {
+            this.onMouseEnter(e)
+        }
+    }
 
     render() {
         const {
@@ -113,7 +118,7 @@ class Home extends React.Component<IProps, IState> {
                         <span className={classNames(styles.ring, styles.four)}/>
                     </span>
                 </span>
-                <div className={styles['blog-preview']} onClick={() => this.onMouseEnter(0)}>
+                <div className={styles['blog-preview']} onClick={() => this.onTabClick(0)}>
                     <div>
                         <span>ALL</span>
                         <span>BLOG</span>
@@ -129,7 +134,7 @@ class Home extends React.Component<IProps, IState> {
                         </p>
                     </section>
                 </div>
-                <div className={styles['example-preview']} onClick={() => this.onMouseEnter(1)}>
+                <div className={styles['example-preview']} onClick={() => this.onTabClick(1)}>
                     <div>
                         <span>NEW</span>
                         <span>EXAMPLE</span>
@@ -145,7 +150,7 @@ class Home extends React.Component<IProps, IState> {
                         </p>
                     </section>
                 </div>
-                <div className={styles['message-preview']} onClick={() => this.onMouseEnter(2)}>
+                <div className={styles['message-preview']} onClick={() => this.onTabClick(2)}>
                     <div>
                         <span>HOT</span>
                         <span>MESSAGE</span>
@@ -157,7 +162,7 @@ class Home extends React.Component<IProps, IState> {
                         </p>
                     </section>
                 </div>
-                <div className={styles['music-preview']} onClick={() => this.onMouseEnter(3)}>
+                <div className={styles['music-preview']} onClick={() => this.onTabClick(3)}>
                     <div>
                         <span>BEAST</span>
                         <span>MUSIC</span>
@@ -173,7 +178,7 @@ class Home extends React.Component<IProps, IState> {
                     当前正在播放的音乐 / 音乐播放器
                 */}
                 </div>
-                <div className={styles['about-preview']} onClick={() => this.onMouseEnter(4)}>
+                <div className={styles['about-preview']} onClick={() => this.onTabClick(4)}>
                     <div>
                         <span>EMAIL</span>
                         <span>GITHUB</span>

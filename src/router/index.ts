@@ -18,9 +18,9 @@ const Router: IRouter[] = [
         requiresAuth: false,
     },
     {
-        path: '/blog',
+        path: '/blog/:type',
         component: Blog,
-        requiresAuth: true,
+        requiresAuth: false,
     },
     {
         path: '/404',

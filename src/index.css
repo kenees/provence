@@ -18,3 +18,12 @@ ul, ol, li, span, div, p, a {
   margin: 0;
   padding: 0;
 }
+
+polygon {
+  transform:rotateY(-180deg) scale(0);
+  transition: all 0.4s cubic-bezier(0.590, 0.720, 0.375, 1.650);
+  transform-origin:center;
+}
+polygon.processed {
+  transform:rotateY(0deg) scale(1);
+}

@@ -9,6 +9,7 @@ import menu3 from './3.jpg'
 import menu4 from './4.jpg'
 import menu5 from './5.jpg'
 import back from './back.png'
+import HomeIcon from './home.png'
 
 import niconiconi from './niconiconi.mp3'
 
@@ -19,5 +20,6 @@ export {
     menu4,
     menu5,
     back,
+    HomeIcon,
     niconiconi,
 }
