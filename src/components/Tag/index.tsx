@@ -5,12 +5,15 @@ import styles from './index.module.scss';
 
 interface Iprops {
   id: number,
+  onTap?: () => void
 }
 
 class Tag extends React.Component<Iprops, {}> {
 
   onClick = id => {
+    const { onTap } = this.props;
     history.push(`/blog/${id}`);
+    onTap && onTap()
   }
 
   render() {

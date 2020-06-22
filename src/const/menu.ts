@@ -2,7 +2,7 @@ export const Menu = [
     {
         title: 'Blog',
         describe: 'Blog about the front end',
-        navigate: '/blog',
+        navigate: '/blog/0',
     },
     {
         title: 'Example',

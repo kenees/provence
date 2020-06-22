@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2017",
+    "module": "commonjs",
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,19 +14,26 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    // "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
     "experimentalDecorators": true,
+    "sourceMap": true,
     "baseUrl":".",
+    "rootDir": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
   "include": [
     "src"
-  ]
+  ],
+  "compileOnSave": false
 }
