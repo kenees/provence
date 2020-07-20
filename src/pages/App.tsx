@@ -6,6 +6,7 @@ import Authority from '@/pages/authority';
 import history from '@/router/history';
 import stores from '../store';
 import routes from '../router';
+import Menu from "@/components/Menu";
 
 
 
@@ -66,6 +67,7 @@ function App(props: any): JSX.Element {
     return (
         <Provider store={stores}>
             <Authority routes={routes}>
+                <Menu />
                 <Router history={history} >
                     <Switch>
                         {
