@@ -1,11 +1,12 @@
 import React from 'react';
 import {renderRoutes} from 'react-router-config';
+import { Provider } from 'react-redux';
 import {Router, Switch} from 'react-router-dom';
-import {Provider} from 'mobx-react';
 import Authority from '@/pages/authority';
 import history from '@/router/history';
 import stores from '../store';
 import routes from '../router';
+
 
 
 // this first method

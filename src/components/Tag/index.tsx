@@ -1,5 +1,5 @@
 import React from 'react';
-import { TagsContent } from '@/const';
+import { TagsContent } from '@/store/constants/tag';
 import history from '@/router/history';
 import styles from './index.module.scss';
 
