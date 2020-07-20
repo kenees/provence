@@ -41,15 +41,18 @@ function atvImg(){
 
 		for(var i=0;i<totalLayerElems;i++){
 			var layer = d.createElement('div'),
-				imgSrc = layerElems[i].getAttribute('data-img');
+				imgSrc = layerElems[i].getAttribute('data-img'),
+				children = layerElems[i].childNodes;
 
 			layer.className = 'atvImg-rendered-layer';
 			layer.setAttribute('data-layer',i);
 			layer.style.backgroundImage = 'url('+imgSrc+')';
+			if (children.length) {
+				layer.append(children[0]);
+			}
 			layersHTML.appendChild(layer);
 
       layers.push(layer);
-      console.log(12)
 		}
 
 		containerHTML.appendChild(shadowHTML);
@@ -68,27 +71,27 @@ function atvImg(){
 					if (win.preventScroll){
 						e.preventDefault();
 					}
-					processMovement(e,true,_thisImg,_layers,_totalLayers,_shine);		
+					processMovement(e,true,_thisImg,_layers,_totalLayers,_shine);
 				});
 	            thisImg.addEventListener('touchstart', function(e){
 	            	win.preventScroll = true;
-					processEnter(e,_thisImg);		
+					processEnter(e,_thisImg);
 				});
 				thisImg.addEventListener('touchend', function(e){
 					win.preventScroll = false;
-					processExit(e,_thisImg,_layers,_totalLayers,_shine);		
+					processExit(e,_thisImg,_layers,_totalLayers,_shine);
 				});
 	        })(thisImg,layers,totalLayerElems,shineHTML);
 	    } else {
 	    	(function(_thisImg,_layers,_totalLayers,_shine) {
 				thisImg.addEventListener('mousemove', function(e){
-					processMovement(e,false,_thisImg,_layers,_totalLayers,_shine);		
+					processMovement(e,false,_thisImg,_layers,_totalLayers,_shine);
 				});
 	            thisImg.addEventListener('mouseenter', function(e){
-					processEnter(e,_thisImg);		
+					processEnter(e,_thisImg);
 				});
 				thisImg.addEventListener('mouseleave', function(e){
-					processExit(e,_thisImg,_layers,_totalLayers,_shine);		
+					processExit(e,_thisImg,_layers,_totalLayers,_shine);
 				});
 	        })(thisImg,layers,totalLayerElems,shineHTML);
 	    }
@@ -124,7 +127,7 @@ function atvImg(){
 		elem.firstChild.style.transform = imgCSS;
 		
 		shine.style.background = 'linear-gradient(' + angle + 'deg, rgba(255,255,255,' + (pageY - offsets.top - bdst)/h * 0.4 + ') 0%,rgba(255,255,255,0) 80%)';
-		shine.style.transform = 'translateX(' + (offsetX * totalLayers) - 0.1 + 'px) translateY(' + (offsetY * totalLayers) - 0.1 + 'px)';	
+		shine.style.transform = 'translateX(' + (offsetX * totalLayers) - 0.1 + 'px) translateY(' + (offsetY * totalLayers) - 0.1 + 'px)';
 
 		var revNum = totalLayers;
 		for(var ly=0;ly<totalLayers;ly++){
@@ -153,4 +156,7 @@ function atvImg(){
 
 }
 
-atvImg();
+export {
+	atvImg,
+}
+// atvImg();

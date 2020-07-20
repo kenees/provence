@@ -13,7 +13,6 @@ class Slider extends React.Component {
     const { children } = this.props;
     return (
       <div className={styles.slider}>
-        <Header />
         {
           children
         }

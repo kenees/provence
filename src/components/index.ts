@@ -6,7 +6,9 @@ import Slider from './Slider';
 import Button from './Button';
 import Forbidden from "./403";
 import ServerError from './500';
+import Loading from './Loading';
 import NotFound from './NotFound';
+import BlnControl from './BlnControl';
 
 export {
     Tag,
@@ -15,7 +17,9 @@ export {
     Header,
     Slider,
     Button,
+    Loading,
     ServerError,
     NotFound,
     Forbidden,
+    BlnControl,
 }

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import classnames from 'classnames';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 import { Tag } from '@/components';
 import styles from './tags.module.scss';
 
@@ -8,17 +8,17 @@ function Tags(props) {
 
   const onMenuTap = () => {
     setShow(!show);
-  }
+  };
 
   const onContentTap = e => {
     if (e.target.className.indexOf('Tag') <= -1) {
       e.stopPropagation()
     }
-  }
+  };
 
   return (<div className={styles.tags} style={{ left: show ? 0 : '100%'}} onClick={onMenuTap}>
-    <img src={require('@/assets/menu/tag.png')} onClick={onMenuTap} style={{ opacity: show ? 0 : 1}} />
-    <div className={classnames(styles.content, {
+    <img src={require('@/assets/menu/tag.png')} onClick={onMenuTap} style={{ opacity: show ? 0 : 1}} alt='' />
+    <div className={classNames(styles.content, {
       [styles.translate]: show,
     })} key='content' onClick={(e) => onContentTap(e)} >
       <p>Tags</p>

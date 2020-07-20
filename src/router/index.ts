@@ -1,6 +1,8 @@
 import {Forbidden, NotFound} from '@/components';
-import Home from '../pages/home';
-import Blog from '../pages/bolg';
+import Home from '@/pages/home';
+import Blog from '@/pages/bolg';
+import Example from "@/pages/example";
+import Filthy from '@/pages/filthy';
 
 
 interface IRouter {
@@ -13,6 +15,11 @@ interface IRouter {
 
 const Router: IRouter[] = [
     {
+        path: '/filthy',
+        component: Filthy,
+        requiresAuth: false,
+    },
+    {
         path: '/home',
         component: Home,
         requiresAuth: false,
@@ -20,6 +27,11 @@ const Router: IRouter[] = [
     {
         path: '/blog/:type',
         component: Blog,
+        requiresAuth: false,
+    },
+    {
+        path: '/example',
+        component: Example,
         requiresAuth: false,
     },
     {

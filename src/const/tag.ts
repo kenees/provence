@@ -56,31 +56,31 @@ export const TagsContent = {
   9: {
     id: 9,
     title: 'Python',
-    color: '',
+    color: 'rgb(54,229,211)',
     url: '/blog/python',
   },
   10: {
     id: 10,
     title: 'Linux',
-    color: '',
+    color: 'rgb(21,49,161)',
     url: '/blog/linux',
   },
   11: {
     id: 11,
     title: 'Git',
-    color: '',
+    color: 'rgb(241,18,249)',
     url: '/blog/git',
   },
   12: {
     id: 12,
     title: 'GitHub',
-    color: '',
+    color: 'rgb(221,228,63)',
     url: '/blog/github',
   },
   13: {
     id: 13,
     title: 'Wxapp',
-    color: '',
+    color: 'rgb(35,242,255)',
     url: '/blog/wxapp',
   },
   14: {
@@ -89,4 +89,4 @@ export const TagsContent = {
     color: 'rgb(134, 137, 140)',
     url: '/blog/html',
   },
-}
+};
