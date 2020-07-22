@@ -3,18 +3,18 @@ import { TagsContent } from '@/store/constants/tag';
 import history from '@/router/history';
 import styles from './index.module.scss';
 
-interface Iprops {
+interface IProps {
   id: number,
   onTap?: () => void
 }
 
-class Tag extends React.Component<Iprops, {}> {
+class Tag extends React.Component<IProps, {}> {
 
   onClick = id => {
     const { onTap } = this.props;
     history.push(`/blog/${id}`);
     onTap && onTap()
-  }
+  };
 
   render() {
     const { id } = this.props;
@@ -22,12 +22,15 @@ class Tag extends React.Component<Iprops, {}> {
     if (tag.id === 0) {
       return '';
     }
-    return (<div className={styles.tag} style={{background: tag.color || TagsContent[0].color}} onClick={() => this.onClick(tag.id)}>
-        <i style={{'borderRightColor': tag.color || TagsContent[0].color}}></i>
-        {
-          tag.title
-        }
-    </div>)
+    return (<div className={styles.tag}
+                 style={{background: tag.color || TagsContent[0].color}}
+                 onClick={() => this.onClick(tag.id)}>
+              <i style={{'borderRightColor': tag.color || TagsContent[0].color}} />
+                {
+                  tag.title
+                }
+          </div>
+    )
   }
 }
 

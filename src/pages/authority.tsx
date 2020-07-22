@@ -1,5 +1,5 @@
 import React from 'react';
-// import history from '@/router/history'
+import history from '@/router/history'
 
 class Authority extends React.Component<any, any>{
     constructor(props: any) {
@@ -8,7 +8,8 @@ class Authority extends React.Component<any, any>{
     }
 
     render() {
-        const { children } = this.props
+        const { children } = this.props;
+        console.log(history)
         // history.push('/')
         return <div>
             { children }

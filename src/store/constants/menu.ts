@@ -14,6 +14,7 @@ import ActiveAboutSvg from '@/assets/menu/active-about.svg';
 
 export const menu = [
     {
+        id: 0,
         path: '/home',
         title: '首页',
         icon: HomeSvg,
@@ -21,6 +22,7 @@ export const menu = [
         authority: [Authority.ADMIN, Authority.USER],
     },
     {
+        id: 1,
         path: '/tags',
         title: '标签',
         icon: TagsSvg,
@@ -28,6 +30,7 @@ export const menu = [
         authority: [Authority.ADMIN, Authority.USER],
     },
     {
+        id: 2,
         path: '/categories',
         title: '分类',
         icon: CategoriesSvg,
@@ -35,6 +38,7 @@ export const menu = [
         authority: [Authority.ADMIN, Authority.USER],
     },
     {
+        id: 3,
         path: '/music',
         title: '音乐',
         icon: MusicSvg,
@@ -42,6 +46,7 @@ export const menu = [
         authority: [Authority.ADMIN, Authority.USER],
     },
     {
+        id: 4,
         path: '/message',
         title: '互动',
         icon: MessageSvg,
@@ -49,6 +54,7 @@ export const menu = [
         authority: [Authority.ADMIN, Authority.USER],
     },
     {
+        id: 5,
         path: '/about',
         title: '关于',
         icon: AboutSvg,

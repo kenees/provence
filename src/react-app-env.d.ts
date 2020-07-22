@@ -67,4 +67,4 @@ declare module '*.module.sass' {
 
 declare module 'react-redux';
 
-declare module 'classnames'
+declare module 'classnames';

@@ -1,10 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const proxy = require('./config/proxy')
+const proxy = require('./config/proxy');
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
+    publicPath: '/',
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist')
   },
@@ -20,16 +21,16 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
-            transpileOnly: true
+          transpileOnly: true
         }
-    },
-    {
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-            loader: 'babel-loader'
+          loader: 'babel-loader'
         }
-    },
+      },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
@@ -70,16 +71,17 @@ module.exports = {
   stats: {
     children: false,
   },
- 
+
   devServer: {
-    stats: 'normal', //  'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose'
+    historyApiFallback: true,
+    stats: 'minimal', //  'none' | 'errors-only' | 'minimal' | 'normal' | 'verbose'
     // compress: true, // gzip 压缩
-		contentBase: './dist',
+    contentBase: './dist',
     host: '0.0.0.0',
     progress: true,
     useLocalIp: true, //允许使用ip打开
-    port: 8080,
+    port: 8000,
     hot: true,
     proxy,
-	},
+  },
 };
