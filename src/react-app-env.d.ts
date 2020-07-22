@@ -65,18 +65,6 @@ declare module '*.module.sass' {
   export default classes;
 }
 
-
-declare module 'react-router-config' {
-    export {
-        renderRoutes
-    }
-}
-
-interface Window {
-  canvasOptions: any,
-  setup: any,
-  __initSnow: any,
-  timer: any,
-}
+declare module 'react-redux';
 
 declare module 'classnames'

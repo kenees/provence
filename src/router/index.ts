@@ -1,6 +1,10 @@
 import {Forbidden, NotFound} from '@/components';
-import Home from '@/pages/home';
-
+import Home from '@/pages/Home';
+import About from "@/pages/About";
+import Category from "@/pages/Category";
+import Message from "@/pages/Message";
+import Music from "@/pages/Music";
+import Tags from "@/pages/Tags";
 
 interface IRouter {
     path: string,
@@ -13,10 +17,39 @@ interface IRouter {
 const Router: IRouter[] = [
     {
         path: '/home',
+        exact: true,
         component: Home,
         requiresAuth: false,
     },
-   
+    {
+        path: '/about',
+        exact: false,
+        component: About,
+        requiresAuth: false,
+    },
+    {
+        path: '/category',
+        exact: true,
+        component: Category,
+        requiresAuth: false,
+    },
+    {
+        path: '/message',
+        exact: true,
+        component: Message,
+        requiresAuth: false,
+    },
+    {
+        path: '/music',
+        exact: true,
+        component: Music,
+        requiresAuth: false,
+    },
+    {
+        path: '/tags',
+        component: Tags,
+        requiresAuth: false,
+    },
     {
         path: '/404',
         component: NotFound,
@@ -27,14 +60,15 @@ const Router: IRouter[] = [
         component: Forbidden,
         requiresAuth: false,
     },
-    {
-        path: '/',
-        component: Home,
-        exact: true,
-        requiresAuth: true,
-    },
+    // {
+    //     path: '/',
+    //     component: Home,
+    //     exact: true,
+    //     requiresAuth: true,
+    // },
     {
         path: '*',
+            exact: true,
         component: NotFound,
         requiresAuth: false,
     }

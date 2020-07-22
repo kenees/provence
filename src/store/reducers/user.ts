@@ -10,13 +10,13 @@ const INITIAL_STATE: IState = {
   age: 111,
 };
 
-export default function counter(state = INITIAL_STATE, action) {
+export default function counter(state = INITIAL_STATE, action: any) {
   switch (action.type) {
     case SET_USER_INFO:
       return {
         ...state,
         age: action.data,
-      }
+      };
     default:
       return state
   }

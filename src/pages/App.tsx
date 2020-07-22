@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import {Router, Switch} from 'react-router-dom';
 import Authority from '@/pages/authority';
 import history from '@/router/history';
-import stores from '../store';
-import routes from '../router';
+import stores from '@/store';
+import routes from '@/router';
 import Menu from "@/components/Menu";
 
 

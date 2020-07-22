@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setUserInfo } from '@/store/actions';
+import { IProps, IState } from './interface';
 
 @connect(({ user }) => ({ user }))
-export default class Home extends React.Component<any, any> {
-  constructor(props: any) {
+export default class Home extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = {
     };
