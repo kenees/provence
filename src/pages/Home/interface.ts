@@ -4,5 +4,5 @@ export interface IProps {
 }
 
 export interface IState {
-
+  list: Array<any>
 }

@@ -12,7 +12,7 @@ class Tag extends React.Component<IProps, {}> {
 
   onClick = id => {
     const { onTap } = this.props;
-    history.push(`/blog/${id}`);
+    // history.push(`/blog/${id}`);
     onTap && onTap()
   };
 

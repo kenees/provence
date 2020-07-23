@@ -1,9 +1,13 @@
 .menu {
+  position: fixed;
+  z-index: 99;
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
+  background: #ffffff;
 
   .logo {
     width: 200px;

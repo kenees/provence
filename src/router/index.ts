@@ -16,10 +16,16 @@ interface IRouter {
 
 const Router: IRouter[] = [
     {
-      path: '/',
-      exact: true,
-      component: Home,
-      requiresAuth: false,
+        path: '/',
+        exact: true,
+        component: Home,
+        requiresAuth: false,
+    },
+    {
+        path: '/home',
+        exact: false,
+        component: Home,
+        requiresAuth: false,
     },
     {
         path: '/about',
@@ -28,7 +34,7 @@ const Router: IRouter[] = [
         requiresAuth: false,
     },
     {
-        path: '/category',
+        path: '/categories',
         exact: false,
         component: Category,
         requiresAuth: false,
@@ -46,7 +52,7 @@ const Router: IRouter[] = [
         requiresAuth: false,
     },
     {
-        path: '/tags',
+        path: '/archiving',
         exact: false,
         component: Tags,
         requiresAuth: false,

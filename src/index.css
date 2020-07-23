@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-ul, ol, li, span, div, p, a {
+ul, ol, li, span, div, p, a, h1, h2, h3, h4, h5, h6 {
   list-style: none;
   text-decoration: none;
   margin: 0;

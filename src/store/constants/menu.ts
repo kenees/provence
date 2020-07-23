@@ -23,8 +23,8 @@ export const menu = [
     },
     {
         id: 1,
-        path: '/tags',
-        title: '标签',
+        path: '/archiving',
+        title: '归档',
         icon: TagsSvg,
         activeIcon: ActiveTagsSvg,
         authority: [Authority.ADMIN, Authority.USER],

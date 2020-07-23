@@ -12,3 +12,9 @@
   - Message
   - Music
   - About
+
+
+```
+  min-width: 950px
+    aside: width 100%
+```
