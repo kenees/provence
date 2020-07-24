@@ -1,10 +1,10 @@
-import {Forbidden, NotFound} from '@/components';
 import Home from '@/pages/Home';
+import Music from "@/pages/Music";
 import About from "@/pages/About";
 import Category from "@/pages/Category";
 import Message from "@/pages/Message";
-import Music from "@/pages/Music";
-import Tags from "@/pages/Tags";
+import Archiving from "@/pages/Archiving";
+import {Forbidden, NotFound} from '@/components';
 
 interface IRouter {
     path: string,
@@ -54,7 +54,7 @@ const Router: IRouter[] = [
     {
         path: '/archiving',
         exact: false,
-        component: Tags,
+        component: Archiving,
         requiresAuth: false,
     },
     {

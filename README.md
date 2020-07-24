@@ -1,5 +1,7 @@
-# blog
-### A small world for learning and entertainment
+# provence
+### 普罗旺斯（Provence），位于法国东南部，是一个濒临地中海的蓝色海岸，薰衣草的故乡。也是一座“骑士之城”。
+![provence](./src/assets/public/time.jpg)
+
  ```
   npm install
   npm start
@@ -7,14 +9,12 @@
  ```
  
 ### Module
-  - Blog
-  - Example
+  - Home
+  - Archiving
+  - Category
   - Message
   - Music
   - About
-
-
 ```
-  min-width: 950px
-    aside: width 100%
+
 ```

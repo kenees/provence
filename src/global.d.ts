@@ -16,3 +16,6 @@ declare module "*.ts";
 interface Date {
   format(fmt:string):string;
 }
+
+interface Window {
+}

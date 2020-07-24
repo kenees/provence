@@ -7,9 +7,15 @@
   box-sizing: border-box;
 
   aside {
-    width: 35%;
-    min-width: 200px;
-    height: 300px;
+    width: 100px;
+    position: fixed;
+    top: 140px;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  aside::-webkit-scrollbar {
+    display: none;
   }
 
   .main {
@@ -19,6 +25,7 @@
     align-items: center;
     padding-bottom: 50px;
     margin: 0 20px;
+    padding-left: 100px;
   }
 
   .toTop {
@@ -42,6 +49,10 @@
 @media (max-width: 950px) {
   .page {
     width: 100%;
+
+    .main {
+      padding-left: 0;
+    }
   }
 
   aside {

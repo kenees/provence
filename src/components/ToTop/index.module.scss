@@ -1,0 +1,10 @@
+.toTop {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  background: url('../../assets/public/back-to-top.svg');
+  background-size: cover;
+}

@@ -1,17 +1,37 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { TagsContent } from '@/store/constants/tag';
+import { BlogItem, ToTop, Tag } from '@/components';
+import { IProps, IState } from './interface';
+import styles from './index.module.scss';
 
-export default class Category extends React.Component<{}, {}> {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+@connect(({ user }) => ({ user }))
+export default class Category extends React.Component<IProps, IState> {
 
-    render() {
-        return (
-            <div>
-                Category
-            </div>
-        )
-    }
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      list: [1, 2, 3, 4, 4, 1,1,1,1,1,1],
+    };
+  }
+
+  render() {
+    const { list } = this.state;
+    const tag_key_arr = Object.keys(TagsContent);
+    return (
+      <div className={styles.page}>
+        <aside>
+          {
+            tag_key_arr.length && tag_key_arr.map(item => <Tag id={TagsContent[item].id} />)
+          }
+        </aside>
+        <div className={styles.main}>
+          {
+            list.length && list.map(item => <BlogItem />)
+          }
+        </div>
+        <ToTop />
+      </div>
+    )
+  }
 }
