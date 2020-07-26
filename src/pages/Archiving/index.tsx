@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { TagsContent } from '@/store/constants/tag';
-import { BlogItem, ToTop, Tag } from '@/components';
+import { TimeLine, ToTop, Tag } from '@/components';
 import { IProps, IState } from './interface';
 import styles from './index.module.scss';
 
@@ -26,9 +26,7 @@ export default class Archiving extends React.Component<IProps, IState> {
           }
         </aside>
         <div className={styles.main}>
-          {
-            list.length && list.map(item => <BlogItem />)
-          }
+            <TimeLine />
         </div>
         <ToTop />
       </div>

@@ -7,7 +7,7 @@ import Authority from '@/pages/authority';
 import history from '@/router/history';
 import stores from '@/store';
 import route from '@/router';
-import Menu from "@/components/Menu";
+import { Canvas, Menu } from '@/components';
 
 
 // function App(props: any) {
@@ -32,8 +32,9 @@ function App(props: any): JSX.Element {
   return (
     <Provider store={stores}>
       <Authority routes={route}>
-        <Menu />
-        <Router history={history} >
+        <Canvas/>
+        <Menu/>
+        <Router history={history}>
           <Switch>
             {
               renderRoutes(route)
@@ -42,7 +43,7 @@ function App(props: any): JSX.Element {
         </Router>
       </Authority>
     </Provider>
-  )
+  );
 }
 
 export default App;

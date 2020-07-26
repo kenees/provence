@@ -1,8 +1,10 @@
 .item {
   width: 95%;
   margin: 20px 0;
-  padding: 20px;
+  padding: 30px 20px;
+  border-radius: 5px;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  transition: all .2s;
 
   h2 {
     font-weight: normal;
@@ -74,4 +76,10 @@
     float: left;
     margin-top: 5px;
   }
+}
+
+.item:hover{
+  box-shadow: 10px 10px 10px 1px rgba(37, 147, 235, 0.52);
+  border-radius: 5px;
+  transform: translateY(-10px);
 }

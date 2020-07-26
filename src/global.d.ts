@@ -11,7 +11,7 @@ declare module "*.style";
 declare module "*.tsx";
 declare module "*.ts";
 
-
+declare var jQuery: (selector:string) => any;
 
 interface Date {
   format(fmt:string):string;
@@ -19,3 +19,4 @@ interface Date {
 
 interface Window {
 }
+
