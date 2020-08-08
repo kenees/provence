@@ -8,6 +8,7 @@ import ServerError from './500';
 import TimeLine from './TimeLine';
 import NotFound from './NotFound';
 import BlogItem from './BlogItem';
+import CloudMusic from "@/components/CloudMusic";
 
 export {
     Tag,
@@ -19,5 +20,6 @@ export {
     BlogItem,
     NotFound,
     Forbidden,
+    CloudMusic,
     ServerError,
 }

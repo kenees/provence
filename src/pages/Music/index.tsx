@@ -1,4 +1,6 @@
 import React from 'react';
+import { CloudMusic } from '@/components';
+import styles from './index.module.scss';
 
 export default class Music extends React.Component<{}, {}> {
     constructor(props) {
@@ -9,8 +11,10 @@ export default class Music extends React.Component<{}, {}> {
 
     render() {
         return (
-            <div>
-                Music
+            <div className={styles.page}>
+                <div className={styles.main}>
+                    <CloudMusic />
+                </div>
             </div>
         )
     }
