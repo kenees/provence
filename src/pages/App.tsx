@@ -32,7 +32,7 @@ function App(props: any): JSX.Element {
   return (
     <Provider store={stores}>
       <Authority routes={route}>
-        <Canvas/>
+        {/*<Canvas/>*/}
         <Menu/>
         <Router history={history}>
           <Switch>

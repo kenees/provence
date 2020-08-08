@@ -20,11 +20,6 @@ export default class Archiving extends React.Component<IProps, IState> {
     const tag_key_arr = Object.keys(TagsContent);
     return (
       <div className={styles.page}>
-        <aside>
-          {
-            tag_key_arr.length && tag_key_arr.map(item => <Tag id={TagsContent[item].id} />)
-          }
-        </aside>
         <div className={styles.main}>
             <TimeLine />
         </div>

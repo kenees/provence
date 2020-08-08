@@ -46,7 +46,7 @@ export default class Menu extends React.Component<any, any>{
                                                           key={item.path}
                     >
                         <img src={index === idx ? item.activeIcon : item.icon} alt='' />
-                        { item.title}
+                        { item.title }
                     </div>))
                 }
             </nav>
