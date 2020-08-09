@@ -10,11 +10,118 @@
   .ctrl {
     width: 100%;
     height: 100%;
-    background: skyblue;
+    //background: skyblue;
+    display: flex;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    border-top: 2px solid #d5d5d5;
+
+    .line {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: greenyellow;
+    }
+
+    .left, .center, .right {
+      flex: 1;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        background-color: red;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .filter {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.1);
+          display: none;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+
+      .icon:hover {
+        .filter {
+          display: flex;
+        }
+      }
+
+      .name {
+        margin-left: 20px;
+      }
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .prev, .play, .pause, .next {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url('../../../assets/cloudmusic/prev.svg');
+        background-size: cover;
+        margin: 0 5px;
+      }
+
+      .play {
+        background: url('../../../assets/cloudmusic/play.svg');
+        background-size: cover;
+      }
+
+      .pause {
+        background: url('../../../assets/cloudmusic/pause.svg');
+        background-size: cover;
+      }
+
+      .next {
+        background: url('../../../assets/cloudmusic/next.svg');
+        background-size: cover;
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .menu {
+        width: 20px;
+        height: 20px;
+        background: url('../../../assets/cloudmusic/menu.svg');
+        background-size: cover;
+        margin-left: 10px;
+        padding-left: 20px;
+      }
+    }
   }
 }
-
-
 
 @media (max-width: 1300px) {
   .player {
