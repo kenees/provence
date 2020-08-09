@@ -1,0 +1,32 @@
+.player {
+  position: fixed;
+  bottom: 0;
+  width: 65%;
+  height: 70px;
+  left: 17.5%;
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  .ctrl {
+    width: 100%;
+    height: 100%;
+    background: skyblue;
+  }
+}
+
+
+
+@media (max-width: 1300px) {
+  .player {
+    width: 85%;
+    left: 7.5%;
+  }
+}
+
+@media (max-width: 950px) {
+  .player {
+    width: 100%;
+    left: 0;
+  }
+
+}
