@@ -9,8 +9,6 @@ class Authority extends React.Component<any, any>{
 
     render() {
         const { children } = this.props;
-        console.log(history)
-        // history.push('/')
         return <div>
             { children }
         </div>
