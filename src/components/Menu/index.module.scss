@@ -44,6 +44,11 @@
     min-width: 732px;
     position: relative;
 
+    a {
+      color: #000;
+      font-weight: bold;
+    }
+
     .menu_item {
       display: flex;
       justify-content: center;
