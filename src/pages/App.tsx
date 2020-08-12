@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import {renderRoutes} from 'react-router-config';
 // import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Router, Route, Switch} from 'react-router-dom';
+import { HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Authority from '@/pages/authority';
 import history from '@/router/history';
 import stores from '@/store';

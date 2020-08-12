@@ -5,14 +5,14 @@ const proxy = require('./config/proxy');
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    publicPath: '/',
+    publicPath: './',
     filename: 'app.js',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'], // 默认解析扩展文件
     alias: {
-      '@': path.join(__dirname, '.', 'src'),
+      '@': path.join(__dirname, './', 'src'),
     },
   },
   module: {

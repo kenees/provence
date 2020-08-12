@@ -21,9 +21,11 @@ export default class Menu extends React.Component<any, any>{
     }
 
     onTabChange = (item, idx) => {
+        console.log('item', item)
         this.setState({
             idx,
         });
+        console.log(item.path)
         history.push(item.path);
     };
 
