@@ -31,7 +31,6 @@
     position: absolute;
     bottom: 71px;
     top: 60px;
-    background: red;
     overflow-y: auto;
 
     li {
@@ -39,6 +38,56 @@
       background: #ffffff;
       margin-bottom: 1px;
       height: 70px;
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+
+      .describe {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .auth {
+          margin-top: 10px;
+        }
+      }
+
+      .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .operation {
+        display: none;
+        align-items: center;
+        position: relative;
+
+        span {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+        }
+
+        .delete {
+          background: url('../../../assets/cloudmusic/del.svg');
+          background-size: cover;
+        }
+      }
+
+     &:hover {
+       background: rgba(223, 222, 230, 0.42);
+
+       .time {
+         display: none;
+       }
+
+       .operation {
+         display: flex;
+       }
+     }
     }
 
 

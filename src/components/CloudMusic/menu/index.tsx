@@ -12,12 +12,18 @@ interface IProps {
   onHideTap: () => void,
 }
 
-export default class MusicMenu extends React.Component<IProps, {}>{
+interface IState {
+  list: Array<any>,
+  activeIndex: number,
+}
+
+export default class MusicMenu extends React.Component<IProps, IState>{
   constructor(props: IProps) {
     super(props);
 
     this.state = {
-
+      list: [1,2,3,4,5, 6, 7, 8],
+      activeIndex: 0,
     }
   }
 
@@ -30,20 +36,29 @@ export default class MusicMenu extends React.Component<IProps, {}>{
 
   render() {
     const { open = false } = this.props;
-
+    const { list } = this.state;
     return(
       <div className={styles.list} style={{ 'height': `${open ? 500: 0 }px`}}>
         <p className={styles.title}>播放队列</p>
         <p className={styles.del} />
         <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
+          {
+            list.length && list.map(item =>
+              <li>
+                  <div className={styles.describe}>
+                    <span> A cut in love {item}</span>
+                    <span className={styles.auth}>作者</span>
+                  </div>
+                  <div className={styles.time}>
+                    <span>03:30</span>
+                  </div>
+                  <div className={styles.operation}>
+                    <span>x</span>
+                    <span className={styles.delete} />
+                  </div>
+              </li>
+            )
+          }
         </ul>
         <footer>
           <span onClick={this.hideMenu} />
