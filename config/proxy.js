@@ -4,10 +4,10 @@ module.exports = {
     pathRewrite: { '^/api': '/' },
     changeOrigin: true
   },
-  '/music': {
+  '/cloud': {
     target: 'https://api.imjad.cn',
-    pathRewrite: { '^/music': '/cloudmusic'},
+    pathRewrite: { '^/cloud': '/cloudmusic'},
     changeOrigin: true,
   }
-}
+};
 
