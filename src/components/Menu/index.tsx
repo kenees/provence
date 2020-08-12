@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {menu} from '@/store/constants/menu';
 import history from '@/router/history';
 import styles from './index.module.scss';
@@ -25,7 +25,6 @@ export default class Menu extends React.Component<any, any> {
     this.setState({
       idx,
     });
-    console.log(item)
   };
 
   render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
@@ -50,7 +49,6 @@ export default class Menu extends React.Component<any, any> {
               >
                 <img src={index === idx ? item.activeIcon : item.icon} alt=''/>
                 {item.title}
-                { item.path}
               </div>
             </Link>
           ))

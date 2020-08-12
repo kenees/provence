@@ -14,7 +14,7 @@ function App(props: any) {
     <Provider store={stores}>
       <Authority>
         <Router>
-          {/*<Menu />*/}
+          <Menu />
           <Switch>
                 {
                   route.map((item, i) => {
