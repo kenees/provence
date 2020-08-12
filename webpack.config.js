@@ -52,11 +52,26 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['url-loader']
+        // use: ['url-loader'],
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[name]_[hash].[ext]',
+            outputPath: 'images/',
+            limit: 8129,
+          }
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['url-loader']
+        // use: ['url-loader'],
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name]_[hash].[ext]',
+            outputPath: 'font/',
+          }
+        }
       }
     ]
   },
