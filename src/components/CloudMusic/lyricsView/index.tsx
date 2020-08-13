@@ -7,10 +7,40 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-export default class LyricsView extends React.Component<{}, {}>{
+interface IProps {
+  open: boolean,
+}
+
+interface IState {
+
+}
+
+export default class LyricsView extends React.Component<IProps, IState>{
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: 0,
+    }
+  }
+
+  componentDidMount() {
+    let height = window.innerHeight;
+    window.onresize = () => {
+      let height = window.innerHeight;
+      this.setState({
+        height,
+      })
+    }
+  }
+
   render() {
+    const { open = false } = this.props;
+    const { height } = this.state;
     return(
-      <div>2334</div>
+      <div className={styles.lyrices} style={{height: `${open ? height : 0}px`}}>
+        2334
+        </div>
     )
   }
 }

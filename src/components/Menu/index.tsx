@@ -39,7 +39,7 @@ export default class Menu extends React.Component<any, any> {
         />
         {
           menu && menu.map((item, index) => (
-            <Link to={item.path}>
+            <Link to={item.path} key={item.path}>
               <div className={classNames(styles.menu_item, {
                   [styles.active]: index === idx,
                 }
