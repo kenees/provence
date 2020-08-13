@@ -1,0 +1,60 @@
+.page {
+  width: 65%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 120px 20px 0 20px;
+  box-sizing: border-box;
+
+
+
+  .title {
+    color: #666;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 10px;
+    text-shadow: 0 1px hsl(0,0%,85%),
+    0 2px hsl(0,0%,80%),
+    0 3px hsl(0,0%,75%),
+    0 4px hsl(0,0%,70%),
+    0 5px hsl(0,0%,60%),
+    0 5px 30px black;
+  }
+
+  ul {
+    li {
+     span {
+       display: inline-block;
+      margin: 20px 0;
+     }
+
+      p {
+        line-height: 30px;
+      }
+    }
+  }
+
+    ol {
+      margin: 10px 20px;
+      li {
+        list-style: decimal-leading-zero;
+        line-height: 30px;
+      }
+    }
+}
+
+@media (max-width: 1300px) {
+  .page {
+    width: 85%;
+  }
+}
+
+@media (max-width: 950px) {
+  .page {
+    width: 100%;
+
+    .main {
+      padding-left: 0;
+    }
+  }
+}
