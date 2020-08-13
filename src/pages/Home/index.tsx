@@ -11,7 +11,7 @@ export default class Home extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      list: [1, 2, 3, 4, 4],
+      list: [1, 2, 3, 4, 6],
     };
   }
 
@@ -25,7 +25,7 @@ export default class Home extends React.Component<IProps, IState> {
         {/*</aside>*/}
         <div className={styles.main}>
           {
-            list.length && list.map(item => <BlogItem />)
+            list.length && list.map(item => <BlogItem key={item} />)
           }
         </div>
         <ToTop />

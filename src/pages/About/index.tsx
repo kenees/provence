@@ -10,7 +10,7 @@ export default class About extends React.Component<{}, {}> {
     render() {
         return (
             <div>
-             About
+               <p>关于</p>
             </div>
         )
     }

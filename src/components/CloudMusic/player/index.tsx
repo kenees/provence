@@ -41,7 +41,6 @@ export default class Player extends React.Component<IProps, IState> {
   };
 
   onOpenMenuTap = () => {
-    console.log('xxx')
     const { openMusicMenu } = this.state;
     this.setState({
       openMusicMenu: !openMusicMenu,

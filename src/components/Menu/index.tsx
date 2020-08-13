@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import {Link} from 'react-router-dom';
 import {menu} from '@/store/constants/menu';
 import history from '@/router/history';
+import Logo from '@/assets/menu/logo.png';
 import styles from './index.module.scss';
 
 export default class Menu extends React.Component<any, any> {
@@ -15,9 +16,14 @@ export default class Menu extends React.Component<any, any> {
 
   componentDidMount() {
     const {location: {pathname}} = history;
-    const activeMenu = menu.filter(item => item.path === pathname)[0] || {id: 0};
+    let idx = 0;
+      menu.map((item, index) => {
+     if (item.path === pathname) {
+       idx = index;
+     }
+    });
     this.setState({
-      idx: activeMenu.id,
+      idx,
     })
   }
 
@@ -30,12 +36,14 @@ export default class Menu extends React.Component<any, any> {
   render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
     const {idx} = this.state;
     return <div className={styles.menu}>
+
       <div className={styles.logo}>
-        ChengZi
+        <img src={Logo}/>
       </div>
+
       <nav>
         <span className={styles.active_bar}
-              style={{transform: `translateX(${idx * 122}px)`}}
+              style={{transform: `translateX(${idx * 150}px)`}}
         />
         {
           menu && menu.map((item, index) => (

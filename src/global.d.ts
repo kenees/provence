@@ -18,5 +18,6 @@ interface Date {
 }
 
 interface Window {
+  onscroll: any
 }
 

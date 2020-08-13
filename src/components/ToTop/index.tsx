@@ -1,30 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import styles from './index.module.scss';
 
-function ToTop() {
-    let timer: any = null;
-    const [isTop, setIsTop] = useState(true);
-    const [showBackToTop, setBackToTop] = useState(false);
+interface IProps {
 
-    useEffect(() => {
+}
+
+interface IState {
+  isTop: boolean,
+  showBackToTop: boolean,
+}
+
+class ToTop extends React.Component<IProps, IState>{
+    timer: any = null;
+    constructor(props) {
+      super(props);
+      this.state = {
+        isTop: true,
+        showBackToTop: false,
+      }
+    }
+
+    componentDidMount() {
+      const { timer } = this;
+      const { isTop } = this.state;
       window.onscroll = () => {
         if (!isTop) {
           timer && clearInterval(timer);
         }
         if (window.scrollY > 100) {
-          setBackToTop(true);
+          this.setState({
+            showBackToTop: true,
+          })
         } else {
-          setBackToTop(false);
+          this.setState({
+            showBackToTop: false,
+          })
         }
       }
-    });
+    }
 
-    const backToTop = () => {
+    componentWillUnmount() {
+      this.timer && clearInterval(this.timer);
+      window.onscroll = null;
+    }
+
+
+
+    backToTop = () => {
+        let { timer } = this;
         timer = setInterval(() => {
         // 获取滚动条，距离顶部的高度（适配IE浏览器，google浏览器）
         const osTop = document.documentElement.scrollTop || document.body.scrollTop;
         const iSpeed = Math.floor(-osTop / 6); // 小数点，向下舍入。
-        setIsTop(true);
+        this.setState({
+          isTop: true,
+        });
         document.documentElement.scrollTop = document.body.scrollTop = (osTop + iSpeed);
         if (osTop == 0) {
           clearInterval(timer);
@@ -32,9 +62,12 @@ function ToTop() {
       }, 10);
     };
 
-   return (
-      <div className={styles.toTop} onClick={backToTop} hidden={!showBackToTop} />
-    )
+    render() {
+      const { showBackToTop } = this.state;
+      return (
+        <div className={styles.toTop} onClick={this.backToTop} hidden={!showBackToTop} />
+      )
+    }
 }
 
 export default ToTop;

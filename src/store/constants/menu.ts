@@ -45,14 +45,14 @@ export const menu = [
         activeIcon: ActiveMusicSvg,
         authority: [Authority.ADMIN, Authority.USER],
     },
-    {
-        id: 4,
-        path: '/message',
-        title: '互动',
-        icon: MessageSvg,
-        activeIcon: ActiveMessageSvg,
-        authority: [Authority.ADMIN, Authority.USER],
-    },
+    // {
+    //     id: 4,
+    //     path: '/message',
+    //     title: '互动',
+    //     icon: MessageSvg,
+    //     activeIcon: ActiveMessageSvg,
+    //     authority: [Authority.ADMIN, Authority.USER],
+    // },
     {
         id: 5,
         path: '/about',

@@ -11,7 +11,7 @@ export default class Category extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      list: [1, 2, 3, 4, 4, 1,1,1,1,1,1],
+      list: [1, 2, 3, 4, 5],
     };
   }
 
@@ -22,12 +22,12 @@ export default class Category extends React.Component<IProps, IState> {
       <div className={styles.page}>
         <aside>
           {
-            tag_key_arr.length && tag_key_arr.map(item => <Tag id={TagsContent[item].id} />)
+            tag_key_arr.length && tag_key_arr.map(item => <Tag id={TagsContent[item].id} key={item} />)
           }
         </aside>
         <div className={styles.main}>
           {
-            list.length && list.map(item => <BlogItem />)
+            list.length && list.map(item => <BlogItem key={item} />)
           }
         </div>
         <ToTop />

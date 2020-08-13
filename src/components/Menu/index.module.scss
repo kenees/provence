@@ -13,10 +13,15 @@
     width: 200px;
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 10px 0;
     position: relative;
     font-weight: bold;
     font-size: 22px;
+
+    img {
+      width: auto;
+      height: 50px
+    }
 
     &::before {
       position: absolute;
@@ -35,8 +40,6 @@
     }
   }
 
-
-
   nav {
     display: flex;
     justify-content: center;
@@ -47,13 +50,16 @@
     a {
       color: #000;
       font-weight: bold;
+      margin: 0;
+      width: 150px;
     }
 
     .menu_item {
+      width: 150px;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px 30px;
+      padding: 20px 0;
 
       img {
         width: 20px;
@@ -63,7 +69,7 @@
     }
 
     .active_bar {
-      width: 122px;
+      width: 150px;
       border-bottom: 2px solid #409eff;
       position: absolute;
       left: 0;
