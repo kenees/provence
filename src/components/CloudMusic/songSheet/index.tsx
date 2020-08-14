@@ -23,7 +23,7 @@ export default class SongSheet extends React.Component<IProps, IState> {
     const { sheetList } = this.state;
     return (
       <div className={styles.sheet}>
-        <p>推荐歌单</p>
+        <p className={styles.title}>推荐歌单</p>
         <ul>
           {
             sheetList.length > 0 && sheetList.map(item =>
