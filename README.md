@@ -11,8 +11,8 @@
  ```
  
 ### Page Module
-  - Home
-  - Archiving
+  [✔️] Home
+  [✔️] Archiving
   - Category
   - Message
   - Music
