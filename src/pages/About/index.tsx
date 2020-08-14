@@ -40,12 +40,8 @@ export default class About extends React.Component<{}, {}> {
                       <li>开始准备做管理系统</li>
                     </ol>
                   </div>
-
-
-
                 </li>
               </ul>
-
             </div>
         )
     }
