@@ -1,13 +1,14 @@
 module.exports = {
-  '/api': {
-    target: 'http://192.168.1.2:8080',
-    pathRewrite: { '^/api': '/' },
-    changeOrigin: true
-  },
   '/cloud': {
-    target: 'https://api.imjad.cn',
-    pathRewrite: { '^/cloud': '/cloudmusic'},
+    target: 'http://music.163.com/api/',
+    pathRewrite: { '^/cloud': '/'},
     changeOrigin: true,
-  }
+  },
+  // '/api': {
+  //   target: 'http://192.168.1.2:8080',
+  //   pathRewrite: { '^/api': '/' },
+  //   changeOrigin: true
+  // },
+
 };
 

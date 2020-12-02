@@ -37,14 +37,14 @@ export const menu = [
         activeIcon: ActiveCategoriesSvg,
         authority: [Authority.ADMIN, Authority.USER],
     },
-    {
-        id: 3,
-        path: '/music',
-        title: '音乐',
-        icon: MusicSvg,
-        activeIcon: ActiveMusicSvg,
-        authority: [Authority.ADMIN, Authority.USER],
-    },
+    // {
+    //     id: 3,
+    //     path: '/music',
+    //     title: '音乐',
+    //     icon: MusicSvg,
+    //     activeIcon: ActiveMusicSvg,
+    //     authority: [Authority.ADMIN, Authority.USER],
+    // },
     // {
     //     id: 4,
     //     path: '/message',

@@ -95,7 +95,7 @@ module.exports = {
     host: '0.0.0.0',
     progress: true,
     useLocalIp: true, //允许使用ip打开
-    port: 8000,
+    port: 8888,
     hot: true,
     proxy,
   },

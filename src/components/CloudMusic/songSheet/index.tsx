@@ -1,4 +1,7 @@
 import React from 'react';
+import { PAY_LIST } from '@/store/constants/music';
+import { fNumber } from '@/util/util';
+import api from '@/api';
 import MusicIcon from '@/assets/cloudmusic/music.svg';
 import styles from './index.module.scss';
 
@@ -19,6 +22,24 @@ export default class SongSheet extends React.Component<IProps, IState> {
     }
   }
 
+  componentDidMount() {
+    console.log(PAY_LIST);
+    this.setState({
+      sheetList: PAY_LIST || [],
+    })
+  }
+
+  playSongList = (id) => {
+    // get list
+    api.getPayList(id)
+      .then(res => {
+        console.log('res', res);
+      })
+      .catch(err => {
+        console.error('get pay list err', err)
+      })
+  };
+
   render() {
     const { sheetList } = this.state;
     return (
@@ -27,17 +48,20 @@ export default class SongSheet extends React.Component<IProps, IState> {
         <ul>
           {
             sheetList.length > 0 && sheetList.map(item =>
-              <li key={item}>
+              <li key={item.id}
+                onClick={() => this.playSongList(item.id)}
+              >
                 <img
-                  src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1316481062,4224934627&fm=26&gp=0.jpg'
+                  src={item.url}
                   alt=''/>
                 <span className={styles.tag}>
                   <img src={MusicIcon}/>
-                  111111
+                  {fNumber(item.number || 0)}
                 </span>
                 <div className={styles.mask}>
                   <span/>
                 </div>
+                <p className={styles.name}>{item.name}</p>
               </li>
             )
           }

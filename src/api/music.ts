@@ -5,7 +5,7 @@ import request from '../util/request';
  * @param id
  */
 export async function getPayList (id: number) {
-    return request.get(`/cloud/?type=playlist&id=${id}`, {})
+    return request.get(`/cloud/playlist/detail?id=${id}`, {})
 }
 
 
