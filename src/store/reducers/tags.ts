@@ -1,25 +1,26 @@
 /**
  * @author kenevy
- * @date  22:43
+ * @date  22:17
  * @describe  ''
  */
 
-import { SET_MUSIC_LIST } from '../constants/music'
+import { UPDATE_TAG_LIST } from '../constants/tag';
+
 
 interface IState {
-  music_list: Array<any>
+  tag_list: Array<any>
 }
 
 const INITIAL_STATE: IState = {
-  music_list: []
+  tag_list: []
 };
 
 export default function counter(state = INITIAL_STATE, action: any) {
   switch (action.type) {
-    case SET_MUSIC_LIST:
+    case UPDATE_TAG_LIST:
       return {
         ...state,
-        music_list: action.data,
+        tag_list: action.data,
       };
     default:
       return state

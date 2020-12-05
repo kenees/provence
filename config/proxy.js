@@ -4,11 +4,12 @@ module.exports = {
     pathRewrite: { '^/cloud': '/'},
     changeOrigin: true,
   },
-  // '/api': {
-  //   target: 'http://192.168.1.2:8080',
-  //   pathRewrite: { '^/api': '/' },
-  //   changeOrigin: true
-  // },
-
+  '/api': {
+    target: 'http://127.0.0.1:5000',
+    changeOrigin: true
+  },
+  // '/': {
+  //   target: 'http://127.0.0.1:9165',
+  // }
 };
 

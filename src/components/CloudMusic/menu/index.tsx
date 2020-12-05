@@ -1,7 +1,7 @@
 /**
  * @author kenevy
  * @date  16:27
- * @descript  '播放列表'
+ * @describe  '播放列表'
  */
 
 import React from 'react';

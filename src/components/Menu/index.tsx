@@ -1,11 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import {menu} from '@/store/constants/menu';
 import history from '@/router/history';
+import { updateTagList } from '@/store/actions';
 import Logo from '@/assets/menu/logo.png';
 import styles from './index.module.scss';
+import api from "@/api";
 
+@connect(({ tags }) => ({ tags }))
 export default class Menu extends React.Component<any, any> {
   constructor(props) {
     super(props);
@@ -16,6 +20,7 @@ export default class Menu extends React.Component<any, any> {
 
   componentDidMount() {
     const {location: {pathname}} = history;
+    this.getTag();
     let idx = 0;
       menu.map((item, index) => {
      if (item.path === pathname) {
@@ -24,8 +29,21 @@ export default class Menu extends React.Component<any, any> {
     });
     this.setState({
       idx,
-    })
+    });
   }
+
+  getTag = () => {
+    const { dispatch } = this.props;
+    api.GetTags()
+      .then((res: any) => {
+        if (res.success) {
+          dispatch(updateTagList(res?.data?.tag_list));
+        }
+      })
+      .catch((err: any) => {
+        console.warn('MENU: Get Tag Fail', err)
+      });
+  };
 
   onTabChange = (item, idx) => {
     this.setState({

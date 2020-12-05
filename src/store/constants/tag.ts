@@ -1,4 +1,4 @@
-export const TagsContent = {
+export const  TagsContent = {
   0: {
     id: 0,
     title: '',
@@ -90,3 +90,12 @@ export const TagsContent = {
     url: '/blog/html',
   },
 };
+
+export const DEFAULT_TAG = {
+    id: 0,
+    title: '',
+    color: 'rgb(135, 180, 78)',
+    url: '/'
+};
+
+export const UPDATE_TAG_LIST = 'UPDATE_TAG_LIST';

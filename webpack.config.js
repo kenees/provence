@@ -7,7 +7,7 @@ module.exports = {
   output: {
     // publicPath: './',
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '/dist')
   },
   resolve: {
     extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'], // 默认解析扩展文件
@@ -95,7 +95,7 @@ module.exports = {
     host: '0.0.0.0',
     progress: true,
     useLocalIp: true, //允许使用ip打开
-    port: 8888,
+    port: 9165,
     hot: true,
     proxy,
   },

@@ -43,7 +43,7 @@ class Request {
               //     querry: { redirect: router.currentRoute.fullPath }//从哪个页面跳转
               // })
           }
-          return response;
+          return response.data;
       },
       error => {
           if (error.response.status === 404) {

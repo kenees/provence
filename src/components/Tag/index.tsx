@@ -1,13 +1,16 @@
 import React from 'react';
-import { TagsContent } from '@/store/constants/tag';
+import { connect } from 'react-redux';
+import { DEFAULT_TAG } from '@/store/constants/tag';
 import history from '@/router/history';
 import styles from './index.module.scss';
 
 interface IProps {
   id: number,
+  tags?: any,
   onTap?: () => void
 }
 
+@connect(({ tags }) => ({ tags }))
 class Tag extends React.Component<IProps, {}> {
 
   onClick = id => {
@@ -17,17 +20,18 @@ class Tag extends React.Component<IProps, {}> {
   };
 
   render() {
-    const { id } = this.props;
-    let tag =Object.assign({}, TagsContent[0], TagsContent[id]);
-    if (tag.id === 0) {
+    const { id, tags } = this.props;
+    let tag = tags.tag_list.filter(item => item.tag_id === id)[0];
+        tag = Object.assign({}, DEFAULT_TAG, tag);
+    if (tag.tag_id === 0) {
       return '';
     }
     return (<div className={styles.tag}
-                 style={{background: tag.color || TagsContent[0].color}}
-                 onClick={() => this.onClick(tag.id)}>
-              <i style={{'borderRightColor': tag.color || TagsContent[0].color}} />
+                 style={{background: tag.default_color}}
+                 onClick={() => this.onClick(tag.tag_id)}>
+              <i style={{'borderRightColor': tag.default_color}} />
                 {
-                  tag.title
+                  tag.tag_name
                 }
           </div>
     )

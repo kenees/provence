@@ -1,7 +1,7 @@
 /**
  * @author kenevy
  * @date  16:27
- * @descript  ''
+ * @describe  ''
  */
 
 import React from 'react';
