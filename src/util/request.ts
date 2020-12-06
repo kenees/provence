@@ -62,7 +62,7 @@ class Request {
   }
 
   get(url: string, params = {}) {
-    return axios.get(url, params);
+    return axios.get(url, { params });
   }
 
   post(url: string, data = {}) {

@@ -13,4 +13,7 @@ export const GetArticleList = () => request.get('/api/v1/article', {});
 /**
  * 获取博客详情
  */
-export const GetArticleInfo = (article_id: number)=> request.get('/api/v1/article', { article_id });
+export const GetArticleInfo = (article_id: number)=> {
+  console.log('id', article_id)
+  return request.get('/api/v1/article', { article_id });
+}

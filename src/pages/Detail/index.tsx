@@ -4,22 +4,34 @@ import {IProps, IState} from './interface';
 import {Link} from 'react-router-dom';
 import history from '@/router/history';
 import api from '@/api';
+import { getQueryVariable } from '@/util/util';
 import GoBackSvg from '@/assets/public/go-back.svg';
 import styles from './index.module.scss';
 
 @connect(({user}) => ({user}))
-export default class Detail extends React.Component<IProps, IState> {
+export default class Detail extends React.Component<any, IState> {
+
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      info: {}
+    }
+  }
 
   componentWillMount() {
-    const xx = this.props;
-    console.log(xx);
-    // api.GetArticleInfo()
-    //   .then(res => {
-    //
-    //   })
-    //   .catch(err => {
-    //
-    //   })
+    const article_id = getQueryVariable('article_id');
+    console.log(article_id);
+    api.GetArticleInfo(Number(article_id))
+      .then(res => {
+        console.log('res', res)
+        const list = res?.data?.article_list ?? [];
+        this.setState({
+          info: list[0],
+        })
+      })
+      .catch(err => {
+        console.log('err', err)
+      })
   }
 
   onBack= () => {
@@ -27,7 +39,8 @@ export default class Detail extends React.Component<IProps, IState> {
   };
 
   render() {
-    const html =  "<p>xxxxx</p>";
+    const { info } = this.state;
+    const html =  info.article_content || '';
     return (
       <div className={styles.page}>
         <div className={styles.header}>
@@ -37,7 +50,14 @@ export default class Detail extends React.Component<IProps, IState> {
             <li>详情</li>
           </ul>
         </div>
-        <h1>这是标题</h1>
+        <h1 className={styles.title}>{info.article_title}</h1>
+        <div className={styles.statistics}>
+          <li><i className={styles.user}/>{info.edit_user}</li>
+          <li><i className={styles.time}/>{new Date(info.update_at*1000).format('yyyy-MM-dd hh:mm:ss')}</li>
+          <li><i className={styles.see}/>{info.reading_number || 0}</li>
+          <li><i className={styles.comment}/>{info.comment_number || 0}</li>
+        </div>
+        <p className={styles.describe}>{info.article_describe}</p>
         <div className={styles.body} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     )
