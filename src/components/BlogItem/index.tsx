@@ -6,7 +6,6 @@ import Tag from "@/components/Tag";
 function BlogItem(props) {
   const { info } = props;
   const { article_tag } = info || '';
-  console.log('info', info)
   return <Link className={styles.item} to={`/detail?article_id=${info.article_id}`}>
     <h2>
       <span>{info.article_title}</span>

@@ -22,7 +22,6 @@ export default class About extends React.Component<{}, {}> {
 
                 <li>
                   <span className={styles.title}>关于博客</span>
-                  <p>纠结了好久，做了好几版花里胡哨的，后来还是决定简洁点好。</p>
                   <p>目前只有一个静态页面，后面打算做个管理系统，小程序，完善下内容。</p>
                   <p>平时比较喜欢记一些笔记，但是经常找不到地方...所以做个网站整理下, hahaha</p>
                   <p>因为不想用一些三方库，所以决定从零开始，用的webpack+react+react-router-dom+redux</p>
@@ -38,6 +37,12 @@ export default class About extends React.Component<{}, {}> {
                     <ol>
                       <li>完成博客静态页面和内容构思</li>
                       <li>开始准备做管理系统</li>
+                    </ol>
+                  </div>
+                  <div>
+                    <p>2020/09 - 2020/012</p>
+                    <ol>
+                      <li>完成管理系統</li>
                     </ol>
                   </div>
                 </li>
