@@ -1,4 +1,5 @@
 import Tag from './Tag';
+import User from './User';
 import Menu from './Menu';
 import ToTop from './ToTop';
 import Canvas from './Canvas';
@@ -12,6 +13,7 @@ import CloudMusic from "@/components/CloudMusic";
 
 export {
     Tag,
+    User,
     Menu,
     ToTop,
     Button,

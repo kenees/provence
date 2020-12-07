@@ -1,0 +1,21 @@
+.page {
+  width: 65%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  padding: 120px 20px 0 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+
+  .main {
+    flex: 1;
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  .reply {
+    height: auto;
+    margin-top: 20px;
+  }
+}
