@@ -1,0 +1,60 @@
+.send {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  textarea {
+    flex: 1;
+    //height: 140px;
+    border-radius: 10px;
+    padding: 10px 10px 30px 10px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    overflow: hidden;
+  }
+
+  .cont {
+    position: absolute;
+    bottom: 90px;
+    right: 10px;
+  }
+
+  .user {
+    flex: 1;
+
+    li {
+      float: left;
+      line-height: 50px;
+      margin-right: 20px;
+      font-weight: bold;
+
+      span {
+        margin-right: 10px;
+      }
+
+      input {
+        max-width: 260px;
+        line-height: 30px;
+        border:1px solid #dcdfe6;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .btn {
+    width: 70px;
+    padding: 5px;
+    color: #ffffff;
+    border-radius: 5px;
+    background: #409eff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

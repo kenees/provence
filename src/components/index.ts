@@ -1,6 +1,8 @@
 import Tag from './Tag';
+import Send from './Send';
 import User from './User';
 import Menu from './Menu';
+import Reply from './Reply';
 import ToTop from './ToTop';
 import Canvas from './Canvas';
 import Button from './Button';
@@ -13,8 +15,10 @@ import CloudMusic from "@/components/CloudMusic";
 
 export {
     Tag,
+    Send,
     User,
     Menu,
+    Reply,
     ToTop,
     Button,
     Canvas,

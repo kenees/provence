@@ -1,0 +1,38 @@
+.box {
+
+  .content {
+    box-sizing: border-box;
+    padding-left: 60px;
+    color: #303133;
+  }
+
+  .answer {
+    margin-left: 60px;
+    margin-top: 10px;
+
+    img {
+      width: 15px;
+      height: 10px;
+      margin-left: 5px;
+
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .send {
+    box-sizing: border-box;
+    padding-left: 60px;
+    margin-top: 10px;
+  }
+
+  .replay_list {
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-left: 50px;
+    background: rgba(243, 243, 243, 0.4);
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+  }
+}
