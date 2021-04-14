@@ -24,13 +24,13 @@ export default class About extends React.Component<{}, {}> {
                   <span className={styles.title}>关于博客</span>
                   <p>目前只有一个静态页面，后面打算做个管理系统，小程序，完善下内容。</p>
                   <p>平时比较喜欢记一些笔记，但是经常找不到地方...所以做个网站整理下, hahaha</p>
-                  <p>因为不想用一些三方库，所以决定从零开始，用的webpack+react+react-router-dom+redux</p>
+                  {/* <p>因为不想用一些三方库，所以决定从零开始，用的webpack+react+react-router-dom+redux</p> */}
                   <p>后台打算用python+flask</p>
                   <p>主要就是技术文档，另外加了个标签分类</p>
                   <p>996的生活已经开始麻木了，利用仅有的空闲时间做点自己想做的了</p>
                 </li>
 
-                <li>
+                {/* <li>
                   <span className={styles.title}>更新日志</span>
                   <div>
                     <p>2020/05 - 2020/08</p>
@@ -45,7 +45,7 @@ export default class About extends React.Component<{}, {}> {
                       <li>完成管理系統</li>
                     </ol>
                   </div>
-                </li>
+                </li> */}
               </ul>
             </div>
         )

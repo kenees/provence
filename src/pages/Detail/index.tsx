@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import MDEditor from '@uiw/react-md-editor';
 import {IProps, IState} from './interface';
 import {Link} from 'react-router-dom';
 import history from '@/router/history';
@@ -58,7 +59,11 @@ export default class Detail extends React.Component<any, IState> {
           <li><i className={styles.comment}/>{info.comment_number || 0}</li>
         </div>
         <p className={styles.describe}>{info.article_describe}</p>
-        <div className={styles.body} dangerouslySetInnerHTML={{ __html: html }} />
+        <div className={styles.body}>
+            <MDEditor.Markdown 
+              source={html}
+            />
+        </div>
       </div>
     )
   }
