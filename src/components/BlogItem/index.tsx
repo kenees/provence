@@ -10,6 +10,13 @@ function BlogItem(props) {
     <h2>
       <span>{info.article_title}</span>
     </h2>
+    <ul>
+      <li><i className={styles.user}/>{info.edit_user}</li>
+      <li><i className={styles.time}/>{new Date(info.update_at*1000).format('yyyy-MM-dd hh:mm:ss')}</li>
+      <li><i className={styles.see}/>{info.reading_number || 0}</li>
+      <li><i className={styles.comment}/>{info.comment_number || 0}</li>
+    </ul>
+    
     <p>{info.article_describe}</p>
 
     <div className={styles.tags}>
@@ -18,12 +25,7 @@ function BlogItem(props) {
       }
     </div>
 
-    <ul>
-      <li><i className={styles.user}/>{info.edit_user}</li>
-      <li><i className={styles.time}/>{new Date(info.update_at*1000).format('yyyy-MM-dd hh:mm:ss')}</li>
-      <li><i className={styles.see}/>{info.reading_number || 0}</li>
-      <li><i className={styles.comment}/>{info.comment_number || 0}</li>
-    </ul>
+  
   </Link>
 }
 

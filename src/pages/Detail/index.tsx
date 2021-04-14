@@ -44,13 +44,13 @@ export default class Detail extends React.Component<any, IState> {
     const html =  info.article_content || '';
     return (
       <div className={styles.page}>
-        <div className={styles.header}>
+        {/* <div className={styles.header}>
           <img className={styles.back} src={GoBackSvg} onClick={this.onBack} />
           <ul className={styles.nav}>
             <li><Link to='/'>首页</Link></li>
             <li>详情</li>
           </ul>
-        </div>
+        </div> */}
         <h1 className={styles.title}>{info.article_title}</h1>
         <div className={styles.statistics}>
           <li><i className={styles.user}/>{info.edit_user}</li>

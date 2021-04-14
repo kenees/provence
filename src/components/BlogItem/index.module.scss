@@ -26,8 +26,9 @@
   }
 
   p {
-    margin-top: 25px;
-    height: 70px;
+    width: 100%;
+    margin-top: 45px;
+    height: 59px;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
@@ -40,8 +41,7 @@
   }
 
   ul {
-    float: right;
-    margin-top: 10px;
+    margin: 20px 0;
     li {
       font-size: 12px;
       color: #999;
