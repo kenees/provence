@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { connect } from 'react-redux';
-import {Link} from 'react-router-dom';
-import {menu} from '@/store/constants/menu';
+import { Link } from 'react-router-dom';
+import { menu } from '@/store/constants/menu';
 import history from '@/router/history';
 import { updateTagList } from '@/store/actions';
 import Logo from '@/assets/menu/logo.png';
@@ -19,13 +19,13 @@ export default class Menu extends React.Component<any, any> {
   }
 
   componentDidMount() {
-    const {location: {pathname}} = history;
+    const { location: { hash } } = history;
     this.getTag();
     let idx = 0;
-      menu.map((item, index) => {
-     if (item.path === pathname) {
-       idx = index;
-     }
+    menu.map((item, index) => {
+      if (('#' + item.path) === hash) {
+        idx = index;
+      }
     });
     this.setState({
       idx,
@@ -45,35 +45,35 @@ export default class Menu extends React.Component<any, any> {
       });
   };
 
-  onTabChange = (item, idx) => {
+  onTabChange = (idx) => {
     this.setState({
       idx,
     });
   };
 
   render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
-    const {idx} = this.state;
+    const { idx } = this.state;
     return <div className={styles.menu}>
 
       <div className={styles.logo}>
-        <img src={Logo}/>
+        <img src={Logo} />
       </div>
 
       <nav>
         <span className={styles.active_bar}
-              style={{transform: `translateX(${idx * 150}px)`}}
+          style={{ transform: `translateX(${idx * 150}px)` }}
         />
         {
           menu && menu.map((item, index) => (
             <Link to={item.path} key={item.path}>
               <div className={classNames(styles.menu_item, {
-                  [styles.active]: index === idx,
-                }
+                [styles.active]: index === idx,
+              }
               )}
-                   onClick={() => this.onTabChange(item, index)}
-                   key={item.path}
+                onClick={() => this.onTabChange(index)}
+                key={item.path}
               >
-                <img src={index === idx ? item.activeIcon : item.icon} alt=''/>
+                <img src={index === idx ? item.activeIcon : item.icon} alt='' />
                 {item.title}
               </div>
             </Link>
